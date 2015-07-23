@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  #get 'pages/home' ##auto generated route, when invoking $ rails generate controller pages home
+  root 'pages#home' #Creates root_path
+
+  get 'about' => 'pages#about' #Creates about_path
+
+  get 'contact_us' => 'pages#contact' #url is 'contact_us'; file is 'contact' in pages folder
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
