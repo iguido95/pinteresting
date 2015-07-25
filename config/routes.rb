@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about' #Creates about_path
 
-  get 'contact_us' => 'pages#contact' #url is 'contact_us'; file is 'contact' in pages folder
+  get 'contact_us' => 'pages#contact' #url is 'contact_us'; file is 'contact' in pages folder AND in pages_controller def 'contact'
 
 
 
