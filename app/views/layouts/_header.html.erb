@@ -20,6 +20,7 @@
         <li><%= link_to "Contact Info", contact_us_path %></li>
 		  <li><%= link_to "Pricing", our_prices_path %></li>
 		  <% if user_signed_in? %>
+		  	<li><%= link_to "My Account", edit_user_registration_path %></li>
 		  	<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 		  <% else %>
 		  	<li><%= link_to "Log In", new_user_session_path %></li>
