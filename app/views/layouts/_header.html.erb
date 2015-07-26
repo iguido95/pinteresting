@@ -19,6 +19,12 @@
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact Info", contact_us_path %></li>
 		  <li><%= link_to "Pricing", our_prices_path %></li>
+		  <% if user_signed_in? %>
+		  	<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+		  <% else %>
+		  	<li><%= link_to "Log In", new_user_session_path %></li>
+		  <% end %>
+		  
       </ul>
     </div><!-- /.navbar-collapse -->
 	</div><!-- /.container --> 
