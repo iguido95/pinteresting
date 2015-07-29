@@ -14,6 +14,8 @@ gem 'devise', '~> 3.5.1'
 gem 'paperclip', '~> 4.2'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'jquery-turbolinks'
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap'
 
 group :production do
 	gem 'pg'

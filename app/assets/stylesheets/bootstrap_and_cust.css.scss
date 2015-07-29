@@ -15,6 +15,10 @@ $icon-font-path: 'bootstrap/'; // FOR THE GLYFICONS TO SHOW UP
      text-align: center;
 }
 
+.clear {
+	clear: both;	
+}
+
 .navbar-brand {
      font-weight: bold;
 }
