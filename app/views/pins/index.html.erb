@@ -1,19 +1,27 @@
 <% if user_signed_in? %>
-	<%= link_to 'New Pin', new_pin_path, class: "btn btn-primary" %>
+	<%= link_to new_pin_path, class: "btn btn-primary" do %>
+		<span class="glyphicon glyphicon-plus"></span> New Pin
+	<% end %>
 <% end %>
 <br><br>
 
 <div id="pins" class="transitions-enabled">
 <% @pins.each do |pin| %>
 	<div class="box panel panel-default">
-	  <%= image_tag pin.image.url(:medium) %>
+	  <% my_image = image_tag pin.image.url(:medium) %>
+	  <%= link_to my_image, pin %>
 	  <div class="panel-body">
-		  <%= pin.description %>
-		  <%= pin.user.email if pin.user %>
-		  <%= link_to 'Show', pin %>
+		  <%= pin.description %><br>
+			<strong><%= pin.user.email if pin.user %></strong>
 		  <% if pin.user == current_user %>
-		  	<%= link_to 'Edit', edit_pin_path(pin) %>
-				<%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+		  	<div class="actions">
+			  	<%= link_to edit_pin_path(pin) do %>
+			  		<span class="glyphicon glyphicon-edit"></span> Edit
+			  	<% end %>
+					<%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+						<span class="glyphicon glyphicon-trash"></span> Delete
+					<% end %>
+		  	</div>
 		  <% end %>
 	  </div>
 	</div>
