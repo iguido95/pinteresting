@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   #get 'pages/home' ##auto generated route, when invoking $ rails generate controller pages home
-  root 'pages#home' #Creates root_path
+  root 'pins#index' #Creates root_path
 
   get 'about' => 'pages#about' #Creates about_path
 
